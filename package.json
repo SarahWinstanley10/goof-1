@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "node app.js",
-    "cleanup": "mongo express-todo --eval 'db.todos.remove({});'"
+    "cleanup": "mongo express-todo --eval 'db.todos.remove({});'",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "body-parser": "1.9.0",
@@ -28,6 +30,8 @@
     "st": "0.2.4",
     "tap": "^5.7.0",
     "marked": "0.3.5",
-    "sequelize": "3.2.0"
-  }
+    "sequelize": "3.2.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
